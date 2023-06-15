@@ -1,0 +1,19 @@
+.App {
+    position: absolute;
+    top: 15%;
+    left: 26%;
+    transform: translate(-40%, -40%);
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    
+  }
+
+  body{
+    background-color: rgb(77, 131, 154); 
+    background-image: url('https://images.unsplash.com/photo-1564500617448-e541b1df7cee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size : cover;
+  }
+   
+ 
+  
