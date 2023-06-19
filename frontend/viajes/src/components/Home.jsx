@@ -1,23 +1,25 @@
 import React from "react";
 import '../App.css'
 import {useEffect,useState,useRef } from "react";
-
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { getViajeRequest, getNewViajeRequest, createViajeRequest, deleteViajeRequest,updateViajeRequest } from "../api/viajes.api";
 import { Grid, Button } from '@mui/material'
-import New from './Dialog'; 
-
+import New from './Dialog';  
+ import Weather from './Weather';
 
 function Home()
 {
      
-    const initialValue = {id:"",destino: "", vehiculo: "", fecha: ""}
+    const initialValue = {id:"",destino: "", country: "", vehiculo: "",marca:"",patente:"", fecha: ""}
     const gridRef = useRef();
     const [viajes, setViajes] = useState([])
     const [open, setOpen] =  React.useState(false);
     const [data,setData] = useState(initialValue);
+     
+    
+ 
 
     const handleClickOpen = () =>{
         setOpen(true);
@@ -49,16 +51,17 @@ function Home()
             loadViajes()
   
     },[])
-  
+   
     //create viaje
-    const handleSubmit = async () =>
+ 
+    const handleSubmit = async (data) =>
     {
-
+ 
       try 
       {
         if(data.id)
         {
-          const confirm = window.confirm("Are you sure, you want to update this row ?")
+          const confirm = window.confirm("Estas seguro que quieres modificar esta fila ?")
           if(confirm)
           {
             const responseUpdate = await getNewViajeRequest(data.id);
@@ -72,7 +75,7 @@ function Home()
             });
             console.log("data nueva" , data)
             const respuestaCambiada = updateViajeRequest(data.id,data)
-         /////////
+         /////
             console.log("put" , respuestaCambiada);
        
             loadViajes()
@@ -81,16 +84,21 @@ function Home()
         }
         else
         {
-           const response = await createViajeRequest(data)
-           console.log("aca", response.data)
-           handleClickClose()
-          loadViajes();
-         // setData(initialValue)
-        }
-      }catch(err)
-      {
-        console.log(err);
-      }
+
+             const response = await createViajeRequest(data)
+            console.log("aca", response.data)
+            handleClickClose()
+            loadViajes();
+            setData(initialValue)
+            
+           }
+              
+         } catch(err)
+          {
+          
+            console.log(err);
+          
+          }
        
         
           
@@ -161,23 +169,33 @@ function Home()
    
         <div  className="App"  > 
         <div className="grid ag-theme-alpine-dark"
-        style={{ height: 800, width: 1400  }}>
-        <h1 style={{color: "thistle", fontFamily: "Arial, Helvetica, sans-serif" , padding: "20px", fontSize:"60px"}}>Viajes Programados</h1>
+        style={{ height: 600, width: 1400  }}>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <Weather></Weather>
+        <h1 style={{color: "thistle", fontFamily: "Arial, Helvetica, sans-serif" , padding: "20px", fontSize:"60px"}}>Viajes Programados En los proximos 10 dia</h1>
         <Grid align="center">
         <Button style={{ fontSize: '25px', fontFamily: "Arial, Helvetica, sans-serif" }} size="large" variant="contained" color="primary" onClick={handleClickOpen}>Nuevo Viaje</Button>
       </Grid> 
+       
         <br></br>
-        <AgGridReact 
          
+        <AgGridReact 
+         style={{mx:"auto"}}
          rowData={viajes}
           ref={gridRef}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
         />
+       
       
         </div>
          
-      <New open={open} handleClickClose={handleClickClose} data={data} onChange={onChange} handleSubmit={handleSubmit} ></New>
+      <New open={open} handleClickClose={handleClickClose} data={data} onChange={onChange} handleSubmit={handleSubmit}  ></New>
       
         </div>
      

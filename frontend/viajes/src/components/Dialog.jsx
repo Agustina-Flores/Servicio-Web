@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 
 const New = ({open,handleClickClose,data,onChange,handleSubmit}) => {
   
-  const  {id,destino,vehiculo,fecha} = data
+  const  {id,destino,country,vehiculo,marca,patente,fecha} = data
  
   return (
     <div>
@@ -22,9 +22,13 @@ const New = ({open,handleClickClose,data,onChange,handleSubmit}) => {
         </DialogTitle>
         <DialogContent>
         <form>
-            <TextField id="destino" value={destino}  onChange={e=>onChange(e)}  placeholder='Ingrese destino' label='Destino' variant='outlined' margin="dense" fullWidth></TextField>
+            <TextField id="destino" value={destino}  onChange={e=>onChange(e)}  placeholder='Ingrese nombre de la ciudad' label='Destino' variant='outlined' margin="dense" fullWidth autoFocus></TextField>
+            <TextField id="country" value={country} onChange={e=>onChange(e)}  placeholder='Ingrese country' label='Country' variant='outlined' margin="dense" fullWidth></TextField>
              <TextField id="vehiculo" value={vehiculo}  onChange={e=>onChange(e)}  placeholder='Ingrese vehiculo' label='Vehiculo' variant='outlined' margin="dense" fullWidth></TextField>
+             <TextField id="marca" value={marca}  onChange={e=>onChange(e)}  placeholder='Ingrese Marca' label='Marca' variant='outlined' margin="dense" fullWidth></TextField>
+             <TextField id="patente" value={patente}  onChange={e=>onChange(e)}  placeholder='Ingrese Patente' label='Patente' variant='outlined' margin="dense" fullWidth></TextField>
             <TextField id="fecha" value={fecha} onChange={e=>onChange(e)}  placeholder='Ingrese fecha: MM-DD-YYYY' label='Fecha' variant='outlined' margin="dense" fullWidth></TextField>
+            
            </form>
         </DialogContent>
         <DialogActions onClick={handleClickClose}>
