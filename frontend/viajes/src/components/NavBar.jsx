@@ -1,18 +1,14 @@
-import { Link } from "react-router-dom";
-
+import '../App'
+import logo from '../images/logo.png'
 
 function NavBar()
 {
  return(
-    <div>
-        <h1>Guarda Tu Proximo Viaje</h1>
-        <ul>
-            <li>
-                <Link to="/" >Home</Link>
-            </li>
-        </ul>
-    </div>
- )
+    <div className="topnav d-flex justify-content-center align-items-center">
+        <img src={logo} className='logo'></img>
+    <a className="active" href="/">Travel</a>
+  </div>
+ );
 }
 
 export default NavBar;

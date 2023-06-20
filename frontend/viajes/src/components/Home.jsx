@@ -8,7 +8,10 @@ import { getViajeRequest, getNewViajeRequest, createViajeRequest, deleteViajeReq
 import { Grid, Button } from '@mui/material'
 import New from './Dialog';  
  import Weather from './Weather';
-
+import india from '../images/l1.jpg'
+import france from '../images/l2.jpg'
+import turkey from '../images/l3.jpg'
+import indonesia from '../images/l4.jpg'
 function Home()
 {
      
@@ -167,7 +170,7 @@ function Home()
       }
     return(
    
-        <div  className="App"  > 
+        <div  className="App" > 
         <div className="grid ag-theme-alpine-dark"
         style={{ height: 600, width: 1400  }}>
           <br></br>
@@ -176,8 +179,45 @@ function Home()
           <br></br>
           <br></br>
           <br></br>
+          <section className="locations" id="locations">
+    <div className="package-title">
+        <h2>Locations</h2>
+        <br></br>
+    </div>
+
+    <div className="location-content">
+        
+        <div className="col-content">
+            <img src={india} alt=""/>
+            <h5>India</h5>
+            <p>IT</p>
+         </div>
+
+       
+
+        <div className="col-content">
+            <img src={france} alt=""/>
+            <h5>Turkey</h5>
+            <p>TR</p>
+        </div> 
+
+         <div className="col-content">
+            <img src={turkey} alt=""/>
+            <h5>France</h5>
+            <p>CI</p>
+        </div> 
+
+        <div className="col-content">
+            <img src={indonesia} alt=""/>
+            <h5>Indonesia</h5>
+            <p>ID</p>
+        </div> 
+    </div>
+</section>
           <Weather></Weather>
-        <h1 style={{color: "thistle", fontFamily: "Arial, Helvetica, sans-serif" , padding: "20px", fontSize:"60px"}}>Viajes Programados En los proximos 10 dia</h1>
+          <br></br>
+          <br></br>
+        <h2 style={{color: "blue", fontFamily: "Arial, Helvetica, sans-serif" , padding: "20px", fontSize:"60px"}}>Viajes programados en los proximos 10 dias</h2>
         <Grid align="center">
         <Button style={{ fontSize: '25px', fontFamily: "Arial, Helvetica, sans-serif" }} size="large" variant="contained" color="primary" onClick={handleClickOpen}>Nuevo Viaje</Button>
       </Grid> 

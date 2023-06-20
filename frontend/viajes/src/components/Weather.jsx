@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
- import { Card } from "@mui/material";
-import { FaTemperatureLow ,FaTemperatureHigh } from "react-icons/fa";
+import { Card } from "@mui/material";
 
+import "../App.css";
 
 const Weather = () => {
   const [data, setData] = useState({});
@@ -22,13 +22,17 @@ const Weather = () => {
 
   const submitHandler = () => {
     setState(getState);
-    console.log("aca" , state)
+    console.log("aca", state);
   };
   return (
     <div className="container">
-      <h2>React Weather App</h2>
+      <div className="package-title">
+        <h2>Consulta el Pronostico</h2>
+      </div>
       <div className="mt-3 d-flex flex-column justify-content-center align-items-center">
-        <label className="col-form-label">Ingresa la ciudad :</label>
+        <div className="col-form-label">
+          <h3>Ingresa el destino :</h3>
+        </div>
         <div className="col-auto">
           <input
             type="text"
@@ -38,14 +42,14 @@ const Weather = () => {
             value={getState}
           />
         </div>
-        <button className="btn btn-primary mt-2" onClick={submitHandler}>
-          Search
+        <button className="btn-search" onClick={submitHandler}>
+          Buscar
         </button>
       </div>
       <div>
         <br></br>
         <br></br>
-        <Card style={{ height: 400, width: 1400, mx: "auto" }}>
+        <Card style={{ height: 350, width: 1400, mx: "auto" ,backgroundColor:"#87CEFA"}}>
           {data.main ? (
             <div className="card-body text-center">
               <img
@@ -58,42 +62,24 @@ const Weather = () => {
                 <i className="fas fa-map-marker-alt"></i>{" "}
                 <strong>{data.name}</strong>
               </p>
+              <br></br>
               <div className="row mt-4">
-              <div className="col-md-6">
-              <p>
-                <FaTemperatureLow> 
-                  <strong>
-                    {(data.main.temp_min)}&deg; C
-                  </strong>
-                  </FaTemperatureLow>
-                </p>
-                
-                <p>
-                   <FaTemperatureHigh> 
-                  <strong>
-                    {(data.main.temp_max)}&deg; C
-                  </strong>
-                  </FaTemperatureHigh>
-                </p>
+               <br></br>
+               <br></br>
+                <div className="col-md-6">
+                  <p>
+                    {"Probabilidad : "}
+                    <strong>{data.weather[0].main}</strong>
+                  </p>
+                  <p>
+                  {"Country : "}
+                    <strong> {data.sys.country}</strong>
+                  </p>
+                </div>
               </div>
-              
-              <div className="col-md-6">
-                <p>
-                  {' '}
-                  <strong>{data.weather[0].main}</strong>
-                </p>
-                <p>
-                  <strong>
-                    {' '}
-                    {data.sys.country}
-                  </strong>
-                </p>
-                
-              </div>
-            </div>
             </div>
           ) : (
-            <h1>No existe este destino</h1>
+            <h1>Loading</h1>
           )}
         </Card>
       </div>
