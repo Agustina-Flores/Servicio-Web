@@ -27,7 +27,7 @@ const Weather = () => {
   return (
     <div className="container">
       <div className="package-title">
-        <h2>Consulta el Pronostico</h2>
+        <h2>Consulta el pronóstico del tiempo</h2>
       </div>
       <div className="mt-3 d-flex flex-column justify-content-center align-items-center">
         <div className="col-form-label">

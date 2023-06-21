@@ -20,8 +20,8 @@ export const getViajes = async(req,res) =>{
 
 export const createViajes = async (req,res) =>{
 
-    const {destino,vehiculo,fecha} = req.body
-    if(destino == null || vehiculo == null || fecha == null)
+    const {destino,vehiculo,fecha,country,marca,patente} = req.body
+    if(destino == null || vehiculo == null || fecha == null || country == null|| marca == null|| patente == null)
     {
         return res.status(400).json({msg: 'Por favor llena todos los campos'})
     }
@@ -33,11 +33,14 @@ export const createViajes = async (req,res) =>{
         .input("destino" , sql.VarChar, destino)
         .input("vehiculo" , sql.VarChar, vehiculo)
         .input("fecha", sql.Date, fecha)
+        .input("country", sql.VarChar, country)
+        .input("marca", sql.VarChar, marca)
+        .input("patente", sql.VarChar, patente)
         .query(queries.addViaje)
     
         console.log(result);
     
-        res.json({destino,vehiculo,fecha});
+        res.json({destino,vehiculo,fecha,country,marca,patente});
      }catch(error)
      {
         res.status(500)
@@ -86,9 +89,9 @@ export const createViajes = async (req,res) =>{
  {
     const {id} = req.params
 
-    const {destino,vehiculo,fecha} = req.body
+    const {destino,vehiculo,fecha,country,marca,patente} = req.body
 
-    if(destino == null || vehiculo == null || fecha == null)
+    if(destino == null || vehiculo == null || fecha == null|| country == null|| marca == null|| patente == null)
     {
         return res.status(400).json({msg: 'Por favor llena todos los campos'})
     }
@@ -98,9 +101,12 @@ export const createViajes = async (req,res) =>{
         .input("destino" , sql.VarChar, destino)
         .input("vehiculo" , sql.VarChar, vehiculo)
         .input("fecha", sql.Date, fecha)
+        .input("country", sql.VarChar, country)
+        .input("marca", sql.VarChar, marca)
+        .input("patente", sql.VarChar, patente)
         .input("id", sql.Int, id)
         .query(queries.updateViaje);
-        res.json({destino,vehiculo,fecha});
+        res.json({destino,vehiculo,fecha,country,marca,patente});
     }
     catch(error)
     {

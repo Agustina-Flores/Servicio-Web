@@ -84,6 +84,7 @@
   left: 20px;
   bottom: 105px;
   cursor: pointer;
+  
 }
 
 .col-content p{
@@ -92,7 +93,9 @@
   color: white;
   left: 20px;
   bottom: 80px;
-  cursor: pointer;
+   
+  
+
 }
 .col-form-label h3
 {
@@ -144,7 +147,17 @@
   font-size: 25px;
   font-weight: 550;
 }
-
+ .title 
+ {
+  top: 6%;
+  font-size: 60px;
+  font-weight: 600;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  line-height: 1; 
+   
+}
+ 
 p{
   font-size: 20px; 
   font-weight: 550;
@@ -156,3 +169,5 @@ p{
   width: 100%;
   
  }
+
+ 

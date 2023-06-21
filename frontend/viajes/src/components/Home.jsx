@@ -181,7 +181,7 @@ function Home()
           <br></br>
           <section className="locations" id="locations">
     <div className="package-title">
-        <h2>Locations</h2>
+        <h2>Ubicaciones</h2>
         <br></br>
     </div>
 
