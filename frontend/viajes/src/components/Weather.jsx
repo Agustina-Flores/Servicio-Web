@@ -70,7 +70,7 @@ useEffect(() => {
                <br></br>
                 <div className="col-md-6">
                   <p>
-                    {"Probabilidad : "}
+                    {"Clima : "}
                     <strong>{data.weather[0].main}</strong>
                   </p>
                   <p>
