@@ -1,19 +1,21 @@
-import { useState, useEffect } from "react";
-import { Card } from "@mui/material";
+ 
+ import { useState, useEffect } from "react";
+ import { Card } from "@mui/material";
 
-import "../App.css";
+ import "../App.css";
 
 const Weather = () => {
+  
   const [data, setData] = useState({});
   const [state, setState] = useState();
   const [getState, setGetState] = useState();
 
-  const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=ed9a274bc3da6f55f4cef9ade3e0f4b1&units=metric`;
+ const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=ed9a274bc3da6f55f4cef9ade3e0f4b1&units=metric`;
 
-  useEffect(() => {
+useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setData(data));
+     .then((data) => setData(data));
   }, [API_URL]);
 
   const inputHandler = (event) => {
@@ -85,5 +87,8 @@ const Weather = () => {
       </div>
     </div>
   );
+ 
 };
+ 
 export default Weather;
+ 

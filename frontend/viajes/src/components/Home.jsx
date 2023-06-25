@@ -15,14 +15,21 @@ import indonesia from '../images/l4.jpg'
 function Home()
 {
      
-    const initialValue = {id:"",destino: "", country: "", vehiculo: "",marca:"",patente:"", fecha: ""}
+    const initialValue = {id:"",destino: "",  vehiculo: "", fecha: "", country: "",marca:"",patente:"" }
     const gridRef = useRef();
     const [viajes, setViajes] = useState([])
     const [open, setOpen] =  React.useState(false);
     const [data,setData] = useState(initialValue);
-     
+    //const [weather,setWeather] = useState([]);
     
- 
+    //const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${data.destino}&appid=ed9a274bc3da6f55f4cef9ade3e0f4b1&units=metric`;
+    ////setWeather({
+    //  temperature: '',
+   //     description: '',
+    //    city: '',
+    //    country: '',
+    //    error: null
+   // })
 
     const handleClickOpen = () =>{
         setOpen(true);
@@ -54,19 +61,24 @@ function Home()
             loadViajes()
   
     },[])
+
+
    
     //create viaje
- 
     const handleSubmit = async (data) =>
     {
- 
+     
       try 
       {
         if(data.id)
         {
+           
+
           const confirm = window.confirm("Estas seguro que quieres modificar esta fila ?")
           if(confirm)
           {
+          
+
             const responseUpdate = await getNewViajeRequest(data.id);
             console.log("update" , responseUpdate.data)
             handleClickClose()
@@ -74,12 +86,17 @@ function Home()
               id:responseUpdate.id,
               destino: responseUpdate.destino,
               vehiculo:responseUpdate.vehiculo,
-              fecha:responseUpdate.fecha
+              fecha:responseUpdate.fecha,
+              country:responseUpdate.country,
+              marca:responseUpdate.marca,
+              patente:responseUpdate.patente,
+
             });
             console.log("data nueva" , data)
-            const respuestaCambiada = updateViajeRequest(data.id,data)
-         /////
-            console.log("put" , respuestaCambiada);
+            const respuestaCambiada = await updateViajeRequest(data.id,data)
+        
+        
+            console.log("put" ,  respuestaCambiada);
        
             loadViajes()
           }
@@ -88,7 +105,9 @@ function Home()
         else
         {
 
-             const response = await createViajeRequest(data)
+        
+            ////
+            const response = await createViajeRequest(data)
             console.log("aca", response.data)
             handleClickClose()
             loadViajes();
@@ -102,12 +121,10 @@ function Home()
             console.log(err);
           
           }
-       
         
-          
-         
     } 
 
+ 
     const columnDefs= [
         // {
        //   field: 'id ',
@@ -151,7 +168,7 @@ function Home()
     {
         
         const confirma = window.confirm("Seguro que quieres eliminar esta fila ?", id)
-        //console.log(id)
+     
         if(confirma)
         {
             const response = await deleteViajeRequest(id)
@@ -181,7 +198,7 @@ function Home()
           <br></br>
           <section className="locations" id="locations">
     <div className="package-title">
-        <h2>Ubicaciones</h2>
+        <h2>Destinos</h2>
         <br></br>
     </div>
 
@@ -217,7 +234,7 @@ function Home()
           <Weather></Weather>
           <br></br>
           <br></br>
-        <h2 style={{color: "blue", fontFamily: "Arial, Helvetica, sans-serif" , padding: "20px", fontSize:"60px"}}>Viajes programados en los proximos 10 dias</h2>
+        <h2 style={{color: "blue", fontFamily: "Arial, Helvetica, sans-serif" , padding: "20px", fontSize:"60px"}}>Viajes programados en los próximos 10 dias</h2>
         <Grid align="center">
         <Button style={{ fontSize: '25px', fontFamily: "Arial, Helvetica, sans-serif" }} size="large" variant="contained" color="primary" onClick={handleClickOpen}>Nuevo Viaje</Button>
       </Grid> 
