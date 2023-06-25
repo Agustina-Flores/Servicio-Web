@@ -53,7 +53,7 @@ const New = ({open,handleClickClose,data,onChange,handleSubmit}) => {
     {
       console.log("data valida" , data)
       let errors={}
-      if( data === "light rain" || data === "light rain")
+      if( data === "Rain" || data === "light rain")
       {
         errors.destino ="❌ No es posible realizar este viaje, por probabilidad de lluvia. Porfavor elija otro destino"
       }
