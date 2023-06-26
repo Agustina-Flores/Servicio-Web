@@ -1,6 +1,7 @@
 import {getConnection,sql,queries} from '../database'
  
 
+//Select
 export const getViajes = async(req,res) =>{
 
     try{
@@ -18,6 +19,7 @@ export const getViajes = async(req,res) =>{
 
 };
 
+//Insert
 export const createViajes = async (req,res) =>{
 
     const {destino,vehiculo,fecha,country,marca,patente} = req.body
@@ -49,6 +51,7 @@ export const createViajes = async (req,res) =>{
 };
 
  
+//Select by id
  export const getViajeById = async (req,res) =>{
     const {id} = req.params
 
@@ -68,6 +71,7 @@ export const createViajes = async (req,res) =>{
 
  };
 
+ //Delete
  export const deleteViaje = async (req,res) =>{
     const {id} = req.params
 
@@ -85,6 +89,7 @@ export const createViajes = async (req,res) =>{
      }
  };
 
+ //Update
  export const updateViaje = async(req,res) =>
  {
     const {id} = req.params

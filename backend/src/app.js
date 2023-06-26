@@ -9,7 +9,6 @@ import cors from 'cors'
  app.set('port', config.port || 3000)
 
 //middlewares
-//
 app.use(cors(
     //origin:'http://localhost:5173'
 ));

@@ -24,7 +24,7 @@ useEffect(() => {
 
   const submitHandler = () => {
     setState(getState);
-    console.log("aca", state);
+    console.log("country", state);
   };
   return (
     <div className="container">

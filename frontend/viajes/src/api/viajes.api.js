@@ -13,7 +13,7 @@ await axios.get("http://localhost:4000/viajes");
 export const deleteViajeRequest = async (id) =>
 await axios.delete(`http://localhost:4000/viajes/${id}`);
  
-
+//get viaje by id
 export const getNewViajeRequest = async (id) =>
 await axios.get(`http://localhost:4000/viajes/${id}` )
 
