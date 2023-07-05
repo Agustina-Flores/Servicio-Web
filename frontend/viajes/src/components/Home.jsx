@@ -176,7 +176,7 @@ function Home() {
         <br></br>
         <section className="locations" id="locations">
           <div className="package-title">
-            <h2 style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+            <h2 style={{ fontFamily: "Arial, Helvetica, sans-serif", color:"blue" }}>
               Destinos
             </h2>
             <br></br>
@@ -216,10 +216,10 @@ function Home() {
             color: "blue",
             fontFamily: "Arial, Helvetica, sans-serif",
             padding: "20px",
-            fontSize: "60px",
+            fontSize: "50px",
           }}
         >
-          Viajes programados en los próximos 10 dias
+          Viajes programados en los próximos dias.
         </h2>
         <Grid align="center">
           <Button
