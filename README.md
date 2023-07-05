@@ -15,7 +15,7 @@ Mediante la App https://openweathermap.org/api/forecast30, podemos consultar el 
 
 * Backend: Node.js
 
-* Frontend: React.js, html,css,material ui
+* Frontend: React.js, HTML,CSS,Material UI
 
 * Base de Datos: Microsoft Sql Server
  
