@@ -1,6 +1,6 @@
  Servicio-Web ⛅🌦️🚀 
 
-Sitio web para guardar viajes , donde se puede crear, reprogramar o eliminar un viaje.
+Sitio web para guardar viajes ,donde podemos crear, reprogramar o eliminar un viaje.
 Ademas se puede consultar el clima del destino a donde desees viajar.
 
 Mediante la App https://openweathermap.org/api/forecast30, podemos consultar el clima de cualquier destino.
