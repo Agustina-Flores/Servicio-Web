@@ -38,7 +38,7 @@ const New = ({ open, handleClickClose, data, onChange, handleSubmit }) => {
       console.log(err);
     }
   }
-  
+  //
   const Validation = (data) => {
     console.log("data valida", data);
     let errors = {};
