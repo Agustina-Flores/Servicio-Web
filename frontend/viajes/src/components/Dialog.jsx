@@ -22,7 +22,7 @@ const New = ({ open, handleClickClose, data, onChange, handleSubmit }) => {
           console.log("desde data ", response.data);
           console.log("desde main", response.data.weather[0].main);
 
-          //Clouds
+        
           if (
             response.data.weather[0].main.includes("light rain") ||
             response.data.weather[0].main.includes("Rain")
