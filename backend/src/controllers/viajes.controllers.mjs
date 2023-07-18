@@ -1,4 +1,4 @@
-import {getConnection,sql,queries} from '../database'
+import {getConnection,sql,queries} from '../database/index.mjs'
  
 
 //Select

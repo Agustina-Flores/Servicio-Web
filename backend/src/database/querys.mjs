@@ -1,4 +1,4 @@
-import { getViajeById } from "../controllers/viajes.controllers";
+import { getViajeById } from "../controllers/viajes.controllers.mjs";
 
 export const queries =
 {

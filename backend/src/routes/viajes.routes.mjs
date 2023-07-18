@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {createViajes, deleteViaje, getViajeById, getViajes, updateViaje} from '../controllers/viajes.controllers'
+import {createViajes, deleteViaje, getViajeById, getViajes, updateViaje} from '../controllers/viajes.controllers.mjs'
 
 const router = Router()
 

@@ -1,6 +1,6 @@
  import express from 'express'
-import config from './config';
-import routes from './routes/viajes.routes'
+import config from './config.mjs'
+import routes from './routes/viajes.routes.mjs'
 import cors from 'cors'
 
  const app = express();
