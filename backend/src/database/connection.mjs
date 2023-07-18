@@ -8,7 +8,7 @@ const dbSetting ={
     database: config.dbDataBase,
     dialec:"mssql",
     options:{
-        encrypt:true,
+       // encrypt:true,
         trustServerCertificate:true,
     },
 };

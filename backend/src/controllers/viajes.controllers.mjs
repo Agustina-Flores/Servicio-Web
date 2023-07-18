@@ -1,6 +1,6 @@
 import {getConnection,sql,queries} from '../database/index.mjs'
  
-
+//
 //Select
 export const getViajes = async(req,res) =>{
 
