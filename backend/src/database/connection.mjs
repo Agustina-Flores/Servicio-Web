@@ -7,7 +7,7 @@ const dbSetting ={
     server : config.dbServer,   
     database: config.dbDataBase,
     dialec:"mssql",
-    instanceName: 'MSSQLSERVER',
+    //instanceName: 'MSSQLSERVER',
     options:{
        // encrypt:true,
         trustServerCertificate:true,
