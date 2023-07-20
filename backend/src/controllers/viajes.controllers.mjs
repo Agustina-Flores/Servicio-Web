@@ -14,7 +14,7 @@ export const getViajes = async(req,res) =>{
     }catch(error){
         res.status(500)
         //
-     res.sense(error.message)
+     //res.sense(error.message)
     }
      
 
