@@ -15,7 +15,7 @@ const dbSetting ={
   },
 
     options:{
-        instanceName: 'MSSQLSERVER',
+       // instanceName: 'MSSQLSERVER',
         encrypt:true,
         trustServerCertificate:true,
     },
