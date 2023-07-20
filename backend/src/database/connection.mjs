@@ -5,13 +5,12 @@ const dbSetting ={
     user : config.dbUser,
     password :config.dbPassword,
     server : config.dbServer,   
-   // database: config.dbDataBase,
+ database: config.dbDataBase,
    dialec:"mssql",
    // instanceName: 'MSSQLSERVER',
     options:{
         instanceName: 'MSSQLSERVER',
-        database: config.dbDataBase,
-      //encrypt:true,
+      encrypt:true,
         trustServerCertificate:true,
     },
 };
