@@ -4,9 +4,9 @@ import config from '../config.mjs';
 const dbSetting ={
     user : config.dbUser,
     password :config.dbPassword,
-    server : config.dbServer,   
+    hostname : config.dbServer,   
     database: config.dbDataBase,
-    dialec:"mssql",
+     dialec:"mssql",
     //instanceName: 'MSSQLSERVER',
     options:{
        // encrypt:true,
