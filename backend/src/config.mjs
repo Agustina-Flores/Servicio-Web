@@ -7,6 +7,6 @@ export default
     port: process.env.PORT || 3000,
     dbUser: process.env.DB_USER || '',
     dbPassword: process.env.DB_PASSWORD || '',
-    hostname: process.env.DB_SERVER || '',
+    server: process.env.DB_SERVER || '',
     dbDataBase: process.env.DB_DATABASE || ''
 };

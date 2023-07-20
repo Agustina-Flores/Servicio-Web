@@ -4,7 +4,7 @@ import config from '../config.mjs';
 const dbSetting ={
     user : config.dbUser,
     password :config.dbPassword,
-    hostname : config.dbServer,   
+    server : config.dbServer,   
     database: config.dbDataBase,
      dialec:"mssql",
     instanceName: 'MSSQLSERVER',
