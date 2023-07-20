@@ -7,7 +7,6 @@ const dbSetting ={
     server : config.dbServer,   
     database: config.dbDataBase,
      dialec:"mssql",
-    //instanceName: 'MSSQLSERVER',
     options:{
       encrypt:true,
         trustServerCertificate:true,
@@ -20,7 +19,7 @@ export async function getConnection()
     
     try{
         const pool = await sql.connect(dbSetting)
-        //sql.connect(dbSetting)
+      
         return pool;
     }catch(error)
     {

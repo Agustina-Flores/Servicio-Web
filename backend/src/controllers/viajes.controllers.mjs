@@ -11,10 +11,11 @@ export const getViajes = async(req,res) =>{
     
 
     res.json(result.recordset)
+   
     }catch(error){
         res.status(500)
-        //
-     //res.sense(error.message)
+       
+      //res.sense(error.message)
     }
      
 
