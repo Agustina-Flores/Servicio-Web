@@ -8,9 +8,9 @@ export default {
   dbPassword: process.env.DB_PASSWORD || "",
   dbServer: process.env.DB_SERVER || "",
   dbDataBase: process.env.DB_DATABASE || "",
-  pool: {
-    max: 10,
-    min: 0,
-    idleTimeoutMillis: 30000,
-  },
+  //pool: {
+   // max: 10,
+  //  min: 0,
+  //  idleTimeoutMillis: 30000,
+ // },
 };

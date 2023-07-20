@@ -7,10 +7,16 @@ const dbSetting ={
     server : config.dbServer,   
  database: config.dbDataBase,
    dialec:"mssql",
-   // instanceName: 'MSSQLSERVER',
+   
+   pool: {
+    max: 10,
+    min: 0,
+    idleTimeoutMillis: 30000,
+  },
+
     options:{
         instanceName: 'MSSQLSERVER',
-      encrypt:true,
+        encrypt:true,
         trustServerCertificate:true,
     },
 };
